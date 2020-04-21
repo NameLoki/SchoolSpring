@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Greeting</title>
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    </head>
+    <body>
+        <input id="num1">
+        <input id="num2">
+        <button onclick="send('add')">더하기</button>
+        <button onclick="send('sub')">빼기</button>
+        <button onclick="send('mul')">곱하기</button>
+        <button onclick="send('div')">나누기</button>
+        <br>
+        <script>
+            function send(mark) {
+                let num1 = $("#num1").val();
+                let num2 = $("#num2").val();
+                location.href = "calculator/" + mark + "?str1=" + num1 + "&str2=" + num2;
+            }
+        </script>
+    </body>
+</html>
