@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>계산기</title>
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+        <script>
+            async function send(sign) {
+                let num1 = $("#num1").val();
+                let num2 = $("#num2").val();
+            
+            let response = await $.get("/calculator?sign=" + sign + "&num1=" + num1 + "&num2=" + num2);
+            alert(response);
+            $('#response').html(JSON.stringify(response));
+            }
+        </script>
+    </head>
+    <body>
+        <input id="num1">
+        <input id="num2">
+        <button onclick="send('add')">더하기</button>
+        <button onclick="send('sub')">빼기</button>
+        <button onclick="send('mul')">곱하기</button>
+        <button onclick="send('div')">나누기</button>
+        <br>
+        <div id="response">결과 : </div>
+    </body>
+</html>
