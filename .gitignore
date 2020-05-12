@@ -30,3 +30,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### 데이터베이스 ###
+database.mv.db
